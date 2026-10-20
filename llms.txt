@@ -1,0 +1,14 @@
+# EVILJAY: TheDevil World
+
+> EvilJay TheDevil (Jay Frazier) makes music, comedy, podcast and content. Minneapolis-born, Las Vegas-based. Book EvilJay: call or text (612) 457-5417 or email EVILJAYTHEDEVIL@yahoo.com.
+
+## Official profiles
+- [Spotify](https://open.spotify.com/artist/1MR461cKZAEASGAFPbsrpy)
+- [Interview on Digital Social Hour (YouTube)](https://www.youtube.com/watch?v=wlwCZElA3jM)
+
+## Pages
+- [Evil Island (interactive 3D site)](https://jaytehedevil.vercel.app/): drive the Hell Rod or Hell Bike to glowing zones while Bubblegum plays
+- [Cinema](https://jaytehedevil.vercel.app/cinema): Evil Jay on Digital Social Hour, the Bubblegum visual and Spotify
+- [EVILJAY Space](https://jaytehedevil.vercel.app/space): fly a fighter jet around the Earth and shoot the aliens
+- [EVILJAY Snowboarding](https://jaytehedevil.vercel.app/snowboard): hell freezes over, a 3D trick snowboarding game on 3 mountains
+- [EVILJAY Boxing](https://jaytehedevil.vercel.app/boxing): Punch-Out style 3D boxing in a Las Vegas arena against 5 contenders

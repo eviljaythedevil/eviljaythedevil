@@ -1,0 +1,7 @@
+/* TEAM */
+Artist: EvilJay TheDevil (Jay Frazier)
+Booking: (612) 457-5417, EVILJAYTHEDEVIL@yahoo.com
+
+/* SITE */
+Last update: 2026/10/20
+Tech: HTML, Three.js, Web Audio, Vercel

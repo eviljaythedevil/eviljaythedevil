@@ -2,12 +2,12 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>EVILJAY Snowboarding | Hell Freezes Over</title>
-<meta name="description" content="Hell froze over. Free 3D snowboarding with jumps, rails, tricks and real drag physics on 3 mountains and 5 boards, with Bubblegum by EvilJay TheDevil.">
+<meta name="description" content="Hell froze over. Free 3D snowboarding with jumps, rails, tricks and real drag physics on 3 mountains and 5 boards, with music by EvilJay TheDevil.">
 <link rel="canonical" href="https://jaytehedevil.vercel.app/snowboard">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#1a0406">
 <meta property="og:type" content="website"><meta property="og:site_name" content="EVILJAY">
-<meta property="og:title" content="EVILJAY Snowboarding | Hell Freezes Over"><meta property="og:description" content="Hell froze over. Free 3D snowboarding with jumps, rails, tricks and real drag physics on 3 mountains and 5 boards, with Bubblegum by EvilJay TheDevil.">
+<meta property="og:title" content="EVILJAY Snowboarding | Hell Freezes Over"><meta property="og:description" content="Hell froze over. Free 3D snowboarding with jumps, rails, tricks and real drag physics on 3 mountains and 5 boards, with music by EvilJay TheDevil.">
 <meta property="og:url" content="https://jaytehedevil.vercel.app/snowboard"><meta property="og:image" content="https://jaytehedevil.vercel.app/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="EVILJAY Snowboarding | Hell Freezes Over"><meta name="twitter:image" content="https://jaytehedevil.vercel.app/og-image.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%98%88%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Knewave&display=swap">
@@ -17,7 +17,7 @@
 html,body{height:100%;overflow:hidden;background:#1a0406;color:#fff;font-family:"Avenir Next","Trebuchet MS",Verdana,sans-serif;touch-action:none;user-select:none;-webkit-user-select:none}
 canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
 button,a{font:inherit;color:#fff;cursor:pointer}
-h1,h2{font-family:Knewave,Impact,"Arial Black",sans-serif;font-weight:400;letter-spacing:.02em;line-height:1.05;color:#ff7a1a;text-shadow:3px 3px 0 #f3ebdd,6px 6px 0 #d4141c}#nx{display:none!important}
+h1,h2{font-family:Knewave,Impact,"Arial Black",sans-serif;font-weight:400;letter-spacing:.02em;line-height:1.05;color:#ff7a1a;text-shadow:3px 3px 0 #f3ebdd,6px 6px 0 #d4141c}
 .ov{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:20px 16px calc(24px + env(safe-area-inset-bottom));background:linear-gradient(#1a0406,#4a0a0a 60%,#8a3a2a);overflow:auto}
 .ov h1{font-size:clamp(34px,10vw,64px);margin-top:6px}.ov h3{font-size:13px;letter-spacing:.12em;opacity:.8;margin-top:6px}
 .seg{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
@@ -46,7 +46,7 @@ h1,h2{font-family:Knewave,Impact,"Arial Black",sans-serif;font-weight:400;letter
 @media (hover:hover) and (pointer:fine){#joy,#btns{display:none}#np{bottom:24px}}
 </style></head><body>
 <canvas id="c"></canvas>
-<main class="sr"><h1>EVILJAY Snowboarding: Hell Freezes Over</h1><p>A 3D trick snowboarding game with jumps, rails, wind and drag physics. Ride three frozen hell mountains, Brimstone Morning, Blood Moon Ridge and Frozen Inferno, with five boards. Music: Bubblegum by EvilJay TheDevil. <a href="index.html">Back to Evil Island</a></p></main>
+<main class="sr"><h1>EVILJAY Snowboarding: Hell Freezes Over</h1><p>A 3D trick snowboarding game with jumps, rails, wind and drag physics. Ride three frozen hell mountains, Brimstone Morning, Blood Moon Ridge and Frozen Inferno, with five boards. Music by EvilJay TheDevil. <a href="index.html">Back to Evil Island</a></p></main>
 <div class="ov" id="menu"><h1>EVILJAY<br>Snowboarding</h1><h3 style="margin-top:0">HELL FREEZES OVER</h3>
 <h3>ARENA</h3><div class="seg" id="sA"><button data-v="morning" class="on">Brimstone Morning</button><button data-v="sunset">Blood Moon Ridge</button><button data-v="night">Frozen Inferno</button></div>
 <h3>SLOPE</h3><div class="seg" id="sL"><button data-v="easy" class="on">Green (easy)</button><button data-v="med">Blue (medium)</button><button data-v="hard">Black (expert)</button></div>
@@ -61,7 +61,7 @@ h1,h2{font-family:Knewave,Impact,"Arial Black",sans-serif;font-weight:400;letter
 <div id="top2" class="fo"><button id="rs">Respawn</button><button id="nx">Next song</button><button id="mu">Sound on</button><a href="index.html">Island</a></div>
 <div id="np" class="fo"></div><div id="prog" class="fo"><i id="pg"></i></div>
 <div id="joy" class="fo"><div id="stick"></div></div><div id="btns" class="fo"><button id="bg">Grab</button><button id="bj">Jump</button></div></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="songs.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const $=id=>document.getElementById(id),PI=Math.PI,cl=(v,a,b)=>v<a?a:v>b?b:v,lerp=(a,b,t)=>a+(b-a)*t,ss=(a,b,t)=>{t=cl((t-a)/(b-a),0,1);return t*t*(3-2*t);},sleep=ms=>new Promise(r=>setTimeout(r,ms));
 let sd=1;const sr=()=>(sd=(sd*16807)%2147483647)/2147483647;
@@ -76,8 +76,8 @@ const BD=[
 {n:'Hellhound Cruiser',c:'#c8141c',grip:5,turn:1.6,drag:1.1,pop:1.1,spin:.9,stab:1.4,glide:1.5,fric:.045},
 {n:'Inferno Rocket',c:'#ff3a6a',grip:5.5,turn:2,drag:1,pop:1.35,spin:1.4,stab:.85,glide:.9,fric:.04},
 {n:'Black Halo Racer',c:'#f3ebdd',grip:8,turn:1.5,drag:.78,pop:.7,spin:.6,stab:1,glide:1.1,fric:.03}];
-const TITLES={'bubblegum.mp3':'Bubblegum · EvilJay TheDevil'};
-const SONGL=['bubblegum.mp3'];
+const EJS=(window.EJ_SONGS&&window.EJ_SONGS.length)?window.EJ_SONGS:[{t:'Bubblegum',u:'bubblegum.mp3'}];const TITLES={};EJS.forEach(o=>{TITLES[o.u]=o.t+' · EvilJay TheDevil';});
+const SONGL=EJS.map(o=>o.u);
 let selA='morning',selL='easy',selB=0,ARN=AR.morning,LV=LVS.easy,B=BD[0],LEN=1500;
 /* renderer */
 const REN=new THREE.WebGLRenderer({canvas:$('c'),antialias:true});REN.setPixelRatio(Math.min(devicePixelRatio,2));REN.setSize(innerWidth,innerHeight);REN.shadowMap.enabled=true;REN.shadowMap.type=THREE.PCFSoftShadowMap;
@@ -153,7 +153,7 @@ const mk=(ty,fr)=>{const s=AC.createBufferSource();s.buffer=nb;s.loop=true;const
 function tone(ty,f1,f2,d,v){if(!AC)return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type=ty;o.frequency.setValueAtTime(f1,t);o.frequency.exponentialRampToValueAtTime(f2,t+d);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(mst);o.start(t);o.stop(t+d);}
 const sfx={pop(){tone('sine',200,520,.15,.25);},land(i){tone('sine',110,40,.25,Math.min(.7,.2+i*.03));},crash(){tone('sawtooth',160,30,.6,.5);},chime(){tone('triangle',880,1320,.25,.18);},beep(f){tone('square',f||660,f||660,.18,.15);}};
 function setMute(m){muted=m;mus.muted=m;if(mst)mst.gain.value=m?0:.9;$('mu').textContent=m?'Sound off':'Sound on';}
-function song(f){if(!mus.src||mus.src.indexOf(f)<0)mus.src=f;mus.volume=1;const pr=mus.play();if(pr&&pr.catch)pr.catch(()=>{});$('np').textContent='Now playing: '+(TITLES[f]||f);}
+function song(f){mus.src=f;mus.volume=1;const pr=mus.play();if(pr&&pr.catch)pr.catch(()=>{});$('np').textContent='Now playing: '+(TITLES[f]||f);}
 ['pointerdown','touchstart','keydown'].forEach(n=>addEventListener(n,()=>{if(mus.src&&mus.paused&&G.st!=='menu')mus.play().catch(()=>{});},{passive:true}));
 /* fx */
 const NP=100,pa=new Float32Array(NP*3).fill(-999),pv=new Float32Array(NP*3),pl=new Float32Array(NP),pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pa,3));const pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xffffff,size:5,sizeAttenuation:false,transparent:true,opacity:.9,depthWrite:false}));pts.frustumCulled=false;S.add(pts);let pi=0;
@@ -239,7 +239,7 @@ function best(){try{return +localStorage.getItem('zdsnow-'+selA+selL)||0;}catch(
 async function startRun(){ac();G.st='cd';$('menu').style.display='none';$('res').style.display='none';document.body.classList.add('run');LV=LVS[selL];B=BD[selB];applyArena(selA);buildBoard(B);buildCourse();
 Object.assign(R,{psi:0,gr:true,tuck:false,charge:0,spin:0,flip:0,lean:0,grab:false,air:0,tp:0,halfs:0,fulls:0,gt:0,crash:0,grind:null,bal:0,inv:0,combo:0,comboT:0,cp:12,pen:0,score:0,tricks:0,gn:''});R.p.x=0;R.p.z=12;R.p.y=H(0,12);R.v.x=0;R.v.y=0;R.v.z=0;G.rt=0;G.camAng=0;
 const n=nrm(0,12);R.nx=n.x;R.ny=n.y;R.nz=n.z;R.fx=0;R.fy=0;R.fz=1;for(let k=-1;k<=3;k++)mkChunk(k);Qs.identity();
-si=Math.max(0,SONGL.indexOf(ARN.song));song(ARN.song);
+if(mus.paused||!mus.src){si=Math.floor(Math.random()*SONGL.length);song(SONGL[si]);}
 for(const t of ['3','2','1','GO!']){$('cd').textContent=t;sfx.beep(t==='GO!'?990:660);await sleep(t==='GO!'?500:800);}$('cd').textContent='';G.st='run';R.v.z=3;}
 async function finish(){G.st='done';document.body.classList.remove('run');const time=G.rt+R.pen,sc=Math.round(R.score+Math.max(0,(LEN/22-time))*60),b=best();let nb2=b;try{if(sc>b){nb2=sc;localStorage.setItem('zdsnow-'+selA+selL,sc);}}catch(e){}
 const st=1+(sc>LV.t[0]?1:0)+(sc>LV.t[1]?1:0);$('rt').textContent='FINISH! '+'\u2605'.repeat(st)+'\u2606'.repeat(3-st);$('rx').textContent='Time '+fmt(time)+' (+'+R.pen+'s wipeout penalties). Tricks landed '+R.tricks+'. Score '+sc+'. Best '+nb2+'.';$('nxt').style.display=selL==='hard'&&selA==='night'?'none':'inline-block';$('res').style.display='flex';sfx.chime();}

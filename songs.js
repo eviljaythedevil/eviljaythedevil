@@ -1,0 +1,1 @@
+window.EJ_SONGS=[{t:"I Am Better! (Most Important)",u:"i-am-better.mp3"},{t:"Bubblegum",u:"bubblegum.mp3"},{t:"Foreign Super Cars",u:"foreign-super-cars.mp3"},{t:"Kill Everbody",u:"kill-everbody.mp3"},{t:"Perfect Storm",u:"perfect-storm.mp3"},{t:"Digital Love",u:"digital-love.mp3"},{t:"War",u:"war.mp3"},{t:"Found The One",u:"found-the-one.mp3"}];

@@ -57,7 +57,7 @@ body.intro #sub{bottom:calc(60px + env(safe-area-inset-bottom))}
 @media (hover:hover) and (pointer:fine){#ctl{display:none!important}#sub{bottom:80px}}
 </style></head><body>
 <canvas id="c"></canvas>
-<main class="sr"><h1>EVILJAY Boxing</h1><p>A 3D Punch-Out style boxing game set in a Las Vegas arena. EvilJay TheDevil, the undefeated champion of the world, fights 5 contenders. Music: Bubblegum by EvilJay TheDevil. <a href="index.html">Evil Island</a></p></main>
+<main class="sr"><h1>EVILJAY Boxing</h1><p>A 3D Punch-Out style boxing game set in a Las Vegas arena. EvilJay TheDevil, the undefeated champion of the world, fights 5 contenders. Music by EvilJay TheDevil. <a href="index.html">Evil Island</a></p></main>
 <div class="ov" id="start"><h1>EVILJAY<br>Boxing</h1><p>Las Vegas, Nevada. Five contenders. One undefeated champion of the world.</p><button class="big" id="go">Enter the arena</button><p style="font-size:12px;opacity:.55">Dodge the glowing glove. Counter when they miss. Turn sound on for the announcer and music.</p><p style="font-size:12px;opacity:.55">Keyboard: A and D dodge, S blocks, J and K jab, Space throws the star punch.</p><p id="vs" style="font-size:12px;color:#9fd">Checking announcer voice...</p><a href="index.html" style="color:#ffd24a;font-size:13px">Back to the island</a></div>
 <div class="ov" id="lad"><h2 style="font-size:34px">The contenders</h2><div class="cards" id="cards"></div><button class="big" id="fight">Fight!</button></div>
 <div class="ov" id="res"><h1 id="rt">KO!</h1><p id="rx"></p><button class="big" id="rb">Next</button></div>
@@ -68,12 +68,12 @@ body.intro #sub{bottom:calc(60px + env(safe-area-inset-bottom))}
 <div id="sub"></div><div id="cnt"></div><div id="pop"></div>
 <div id="ctl" class="fo"><div class="g"><button class="cb" id="dL">Dodge left</button><button class="cb" id="bB">Block</button><button class="cb" id="dR">Dodge right</button></div><div class="g rg"><button class="cb j" id="jL">Left jab</button><button class="cb j" id="jR">Right jab</button><button class="cb" id="bS">STAR PUNCH</button></div></div>
 <button id="skip" class="io">Skip intro</button>
-<div id="bar2"><span id="np">Press Enter the arena</span><button id="mu">Sound on</button><a href="index.html">Island</a></div>
+<div id="bar2"><span id="np">Press Enter the arena</span><button id="bnx">Next song</button><button id="mu">Sound on</button><a href="index.html">Island</a></div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="songs.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const $=id=>document.getElementById(id),rnd=Math.random,PI=Math.PI,rr=a=>a[0]+rnd()*(a[1]-a[0]),sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const TITLES={'bubblegum.mp3':'Bubblegum · EvilJay TheDevil'};
+const EJS=(window.EJ_SONGS&&window.EJ_SONGS.length)?window.EJ_SONGS:[{t:'Bubblegum',u:'bubblegum.mp3'}];const TITLES={};EJS.forEach(o=>{TITLES[o.u]=o.t+' · EvilJay TheDevil';});const SONGL=EJS.map(o=>o.u);let si=Math.floor(Math.random()*SONGL.length);
 const OPP=[
 {n:'Choirboy Calvin',t:'The Newcomer',rec:'4 wins and 6 losses',hp:70,tele:.8,dmg:9,idle:[1.2,2.1],guard:.15,moves:['jab','jab','hook'],sc:.72,bulk:1,skin:0xe0b08a,hair:0x3a2a1a,shorts:0xf3ebdd,glove:0xffffff,halo:true,song:'bubblegum.mp3'},
 {n:'Deacon Vega',t:'The Fast Hands Kid',rec:'12 wins and 2 losses',hp:95,tele:.55,dmg:11,idle:[.8,1.5],guard:.3,moves:['jab','jab','hook','flurry','feint'],sc:.78,bulk:1,skin:0xc08060,hair:0x111111,shorts:0x2a5ad0,glove:0xffd23a,halo:true,song:'bubblegum.mp3'},
@@ -162,6 +162,7 @@ const sfx={swing(){nz(.12,.12,2500,'highpass');},hit(){nz(.14,.5,900);tone('sine
 bell(n){for(let i=0;i<n;i++)setTimeout(()=>{tone('sine',1250,1240,1.4,.35);tone('sine',2310,2300,1,.2);},i*650);},tick(){tone('square',800,600,.08,.12);},
 roar(v){exc=1;}};
 function setMute(m){muted=m;mus.muted=m;if(mst)mst.gain.value=m?0:.9;if(m&&window.speechSynthesis)speechSynthesis.cancel();$('mu').textContent=m?'Sound off':'Sound on';}$('mu').onclick=()=>setMute(!muted);
+function nextSong(){si=(si+1)%SONGL.length;mus.src=SONGL[si];mus.volume=1;mus.play().catch(()=>{});$('np').textContent='Now playing: '+TITLES[SONGL[si]];}$('bnx').onclick=nextSong;
 function song(f){if(!mus.src||mus.src.indexOf(f)<0)mus.src=f;mus.volume=1;const pr=mus.play();if(pr&&pr.catch)pr.catch(()=>{$('np').textContent='Tap the screen to start the music';});$('np').textContent='Now playing: '+(TITLES[f]||f);}
 ['pointerdown','touchstart','keydown'].forEach(n=>addEventListener(n,()=>{if(mus.src&&mus.paused&&G.mode!=='menu')mus.play().catch(()=>{});},{passive:true}));
 let voice=null;function pickV(){if(!window.speechSynthesis)return;const v=speechSynthesis.getVoices().filter(x=>/^en/i.test(x.lang));voice=v.find(x=>/(David|Daniel|Guy|Mark|Alex|Male|Fred|Aaron|Arthur|George)/i.test(x.name))||v.find(x=>/en[-_]US/i.test(x.lang))||v[0]||null;}
@@ -241,18 +242,18 @@ const fin=o.kds>=3,riseAt=5+Math.floor(rnd()*4);
 for(let i=1;i<=10;i++){if(G.mode!=='count')return;$('cnt').textContent=i;sfx.tick();await sleep(560);
 if(!fin&&i>=riseAt&&i<10){o.down=false;OB.tf=0;o.hp=Math.round(o.max*(.45-.08*(o.kds-1)));o.st='idle';o.t=1.2;o.q=[];o.stun=0;o.enr=true;G.mode='fight';$('cnt').textContent='';$('sub').style.display='none';popup('HE GETS UP!','#ff6a6a');G.p.sta=Math.min(100,G.p.sta+20);return;}}
 $('cnt').textContent='KO!';win();}
-async function win(){G.mode='won';G.score+=500*(G.f+1);sfx.roar();sfx.bell(3);confetti();song('bubblegum.mp3');ZB.cel=true;if(G.f+1>saved){saved=G.f+1;try{localStorage.setItem('ejbox',saved);}catch(e){}}
+async function win(){G.mode='won';G.score+=500*(G.f+1);sfx.roar();sfx.bell(3);confetti();song(SONGL[si]);ZB.cel=true;if(G.f+1>saved){saved=G.f+1;try{localStorage.setItem('ejbox',saved);}catch(e){}}
 let best=0;try{best=+localStorage.getItem('ejboxbest')||0;if(G.score>best){best=G.score;localStorage.setItem('ejboxbest',best);}}catch(e){}
 await say('Knockout! The winner, and still undefeated champion of the world, EVIL JAY, THE DEVIL!');$('cnt').textContent='';$('sub').style.display='none';document.body.classList.remove('fight');
 const last=G.f>=4;$('rt').textContent=last?'WORLD CHAMPION!':'KO!';$('rx').textContent=(last?'You beat all 5 contenders. EvilJay TheDevil is still undefeated champion of the world. ':'You beat '+G.o.cfg.n+'. Next up: '+OPP[G.f+1].n+', '+OPP[G.f+1].t+'. ')+'Score '+G.score+'. Best '+best+'.';$('rb').textContent=last?'Fight again from the start':'Next contender';$('res').style.display='flex';}
-async function lose(){G.mode='lost';G.p.down=true;ZB.tf=1;await sleep(1200);$('cnt').textContent='';song('bubblegum.mp3');document.body.classList.remove('fight');showSub('Announcer','And the winner by knockout, '+G.o.cfg.n+'!');say('And the winner by knockout, '+G.o.cfg.n+'!',{});
+async function lose(){G.mode='lost';G.p.down=true;ZB.tf=1;await sleep(1200);$('cnt').textContent='';song(SONGL[si]);document.body.classList.remove('fight');showSub('Announcer','And the winner by knockout, '+G.o.cfg.n+'!');say('And the winner by knockout, '+G.o.cfg.n+'!',{});
 $('rt').textContent='DOWN!';$('rx').textContent=G.o.cfg.n+' wins this one. Dodge when the glove glows, counter after a dodge, and watch your stamina. Score '+G.score+'.';$('rb').textContent='Try again';$('res').style.display='flex';}
 async function startFight(i){G.f=i;skipF=false;$('res').style.display='none';$('lad').style.display='none';if(i===0)G.score=0;setOpp(i);const p=G.p;p.hp=G.mode==='won'?Math.min(p.max,p.hp+25):100;p.dodge=0;p.dt=0;p.meter=0;p.down=false;p.blk=false;p.kds=0;p.sta=100;G.streak=0;G.mash=0;cmT=-99;ZB.tf=0;ZB.fall=0;ZB.cel=false;ZB.lean=0;ZB.tL=ZB.tR=0;G.round=1;G.rt=0;G.mode='intro2';G.ang=PI;
-ZB.P.g.position.set(0,0,-.8);ref.g.visible=true;ann.g.visible=true;ann.g.position.set(2.8,0,.4);document.body.classList.add('intro');song(OPP[i].song);
+ZB.P.g.position.set(0,0,-.8);ref.g.visible=true;ann.g.visible=true;ann.g.position.set(2.8,0,.4);document.body.classList.add('intro');song(SONGL[si]);
 const c=OPP[i];await say('Fighting out of the blue corner, '+c.n+', '+c.t+', with a record of '+c.rec+'!');await say('Round one!');sfx.bell(2);skipF=false;
 document.body.classList.remove('intro');$('sub').style.display='none';ann.g.visible=false;document.body.classList.add('fight');popup('FIGHT!','#ffd24a');G.mode='fight';OB.P.g.visible=true;}
 /* intro */
-async function intro(){G.mode='intro';document.body.classList.add('intro');song('bubblegum.mp3');ref.g.visible=true;ann.g.position.set(0,0,.4);setOpp(0);OB.P.g.visible=false;ZB.P.g.position.set(0,-.7,-9);ZB.cel=true;
+async function intro(){G.mode='intro';document.body.classList.add('intro');song(SONGL[si]);ref.g.visible=true;ann.g.position.set(0,0,.4);setOpp(0);OB.P.g.visible=false;ZB.P.g.position.set(0,-.7,-9);ZB.cel=true;
 await say('Ladies and gentlemen, welcome to Las Vegas, Nevada!');sfx.roar(.35);
 await say('Tonight, for the championship of the world, the main event!');
 G.walk=true;await say('Introducing, from the red corner, born in Minneapolis, Minnesota, fighting out of Las Vegas, Nevada, the undefeated champion of the world... EVIL JAY, THE DEVIL!');sfx.roar(.5);G.walk=false;ZB.P.g.position.set(0,0,-.8);await sleep(skipF?0:700);
@@ -265,7 +266,7 @@ $('fight').onclick=()=>{ac();startFight(saved>=5?0:saved);};
 $('rb').onclick=()=>{ac();$('res').style.display='none';if(G.mode==='won'){if(G.f>=4){saved=0;try{localStorage.setItem('ejbox',0);}catch(e){}startFight(0);}else startFight(G.f+1);}else startFight(G.f);};
 function hold(el,on,off){['touchstart','mousedown'].forEach(n=>el.addEventListener(n,e=>{e.preventDefault();on();},{passive:false}));['touchend','touchcancel','mouseup','mouseleave'].forEach(n=>el.addEventListener(n,()=>off&&off()));}
 hold($('dL'),()=>dodge(1));hold($('dR'),()=>dodge(-1));hold($('bB'),()=>{if(G.mode==='pcount')G.mash++;else if(G.p.sta>0)G.p.blk=true;},()=>G.p.blk=false);hold($('jL'),()=>punch(1));hold($('jR'),()=>punch(-1));hold($('bS'),star);
-addEventListener('keydown',e=>{if(e.repeat)return;const k=e.code;if(k==='ArrowLeft'||k==='KeyA')dodge(1);else if(k==='ArrowRight'||k==='KeyD')dodge(-1);else if(k==='ArrowDown'||k==='KeyS'){if(G.mode==='pcount')G.mash++;else if(G.p.sta>0)G.p.blk=true;}else if(k==='KeyJ'||k==='KeyZ')punch(1);else if(k==='KeyK'||k==='KeyX')punch(-1);else if(k==='Space'){e.preventDefault();star();}else if(k==='KeyM')setMute(!muted);});
+addEventListener('keydown',e=>{if(e.repeat)return;const k=e.code;if(k==='ArrowLeft'||k==='KeyA')dodge(1);else if(k==='ArrowRight'||k==='KeyD')dodge(-1);else if(k==='ArrowDown'||k==='KeyS'){if(G.mode==='pcount')G.mash++;else if(G.p.sta>0)G.p.blk=true;}else if(k==='KeyJ'||k==='KeyZ')punch(1);else if(k==='KeyK'||k==='KeyX')punch(-1);else if(k==='Space'){e.preventDefault();star();}else if(k==='KeyM')setMute(!muted);else if(k==='KeyN')nextSong();});
 addEventListener('keyup',e=>{if(e.code==='ArrowDown'||e.code==='KeyS')G.p.blk=false;});
 /* loop */
 let last=0,T=0,jf=0;

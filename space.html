@@ -2,17 +2,17 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>EVILJAY Space | Fly the Fighter Jet and Shoot the Aliens</title>
-<meta name="description" content="Fly the EVILJAY fighter jet around the whole Earth and shoot the aliens, with Bubblegum by EvilJay TheDevil playing. Play free in your browser.">
+<meta name="description" content="Fly the EVILJAY fighter jet around the whole Earth and shoot the aliens, with EvilJay TheDevil's music playing. Play free in your browser.">
 <link rel="canonical" href="https://jaytehedevil.vercel.app/space">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#070001">
 <meta property="og:type" content="website"><meta property="og:site_name" content="EVILJAY">
-<meta property="og:title" content="EVILJAY Space | Fly the Fighter Jet and Shoot the Aliens"><meta property="og:description" content="Fly the EVILJAY fighter jet around the whole Earth and shoot the aliens, with Bubblegum by EvilJay TheDevil playing. Play free in your browser.">
+<meta property="og:title" content="EVILJAY Space | Fly the Fighter Jet and Shoot the Aliens"><meta property="og:description" content="Fly the EVILJAY fighter jet around the whole Earth and shoot the aliens, with EvilJay TheDevil's music playing. Play free in your browser.">
 <meta property="og:url" content="https://jaytehedevil.vercel.app/space"><meta property="og:image" content="https://jaytehedevil.vercel.app/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="EVILJAY Space | Fly the Fighter Jet and Shoot the Aliens">
-<meta name="twitter:description" content="Fly the EVILJAY fighter jet around the whole Earth and shoot the aliens, with Bubblegum by EvilJay TheDevil playing. Play free in your browser."><meta name="twitter:image" content="https://jaytehedevil.vercel.app/og-image.jpg">
+<meta name="twitter:description" content="Fly the EVILJAY fighter jet around the whole Earth and shoot the aliens, with EvilJay TheDevil's music playing. Play free in your browser."><meta name="twitter:image" content="https://jaytehedevil.vercel.app/og-image.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%98%88%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Knewave&display=swap">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoGame", "name": "EVILJAY Space", "url": "https://jaytehedevil.vercel.app/space", "description": "Fly a fighter jet around the Earth and shoot the aliens, with Bubblegum by EvilJay TheDevil.", "genre": "Space shooter", "gamePlatform": "Web browser", "applicationCategory": "Game", "author": {"@id": "https://jaytehedevil.vercel.app/#artist"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoGame", "name": "EVILJAY Space", "url": "https://jaytehedevil.vercel.app/space", "description": "Fly a fighter jet around the Earth and shoot the aliens, with music by EvilJay TheDevil.", "genre": "Space shooter", "gamePlatform": "Web browser", "applicationCategory": "Game", "author": {"@id": "https://jaytehedevil.vercel.app/#artist"}}</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;overflow:hidden;background:#000004;color:#fff;font-family:"Avenir Next","Trebuchet MS",Verdana,sans-serif;touch-action:none;user-select:none;-webkit-user-select:none}
@@ -23,7 +23,7 @@ button,a{font:inherit;color:#fff;cursor:pointer}
 .big{background:#d4141c;color:#fff;border:0;padding:16px 40px;font-weight:800;font-size:18px;border-radius:40px;box-shadow:0 0 36px #ff3a1a99}
 #over{display:none}
 #hud{position:fixed;inset:0;z-index:10;pointer-events:none}
-#top{position:absolute;top:calc(12px + env(safe-area-inset-top));left:14px;display:flex;flex-direction:column;gap:2px;font-size:13px}#top b{font-size:19px;font-family:Knewave,Impact,sans-serif;font-weight:400;color:#ff7a1a}#nx{display:none}
+#top{position:absolute;top:calc(12px + env(safe-area-inset-top));left:14px;display:flex;flex-direction:column;gap:2px;font-size:13px}#top b{font-size:19px;font-family:Knewave,Impact,sans-serif;font-weight:400;color:#ff7a1a}
 #shield{position:absolute;top:calc(14px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);width:min(34vw,200px);height:10px;border:1px solid #fff6;border-radius:6px;overflow:hidden;display:none}
 #sb{display:block;height:100%;width:100%;background:#ff7a1a}
 #rd{position:absolute;top:calc(12px + env(safe-area-inset-top));right:12px;width:96px;height:96px;border-radius:50%;border:1px solid #fff4}
@@ -42,16 +42,16 @@ button,a{font:inherit;color:#fff;cursor:pointer}
 @media (prefers-reduced-motion:reduce){#msg{transition:none}}
 </style></head><body>
 <canvas id="c"></canvas><canvas id="o"></canvas>
-<main class="sr"><h1>EVILJAY Space</h1><p>Fly the EVILJAY fighter jet around the whole Earth and shoot the aliens. Music: Bubblegum by EvilJay TheDevil. <a href="index.html">Back to Evil Island</a></p></main>
-<div class="ov" id="start"><h1>EVILJAY<br>Space</h1><p>Fly the fighter jet around the whole Earth and shoot the aliens. Bubblegum is playing.</p><button class="big" id="go">Launch</button><p style="font-size:12px;opacity:.55">Touch: stick to steer, Fire to shoot, Missile for one-hit homing blasts. Keyboard: WASD or arrows, Space fires, F missile, Shift boosts. Headphones recommended.</p></div>
+<main class="sr"><h1>EVILJAY Space</h1><p>Fly the EVILJAY fighter jet around the whole Earth and shoot the aliens. Music by EvilJay TheDevil. <a href="index.html">Back to Evil Island</a></p></main>
+<div class="ov" id="start"><h1>EVILJAY<br>Space</h1><p>Fly the fighter jet around the whole Earth and shoot the aliens. EvilJay TheDevil's music is playing.</p><button class="big" id="go">Launch</button><p style="font-size:12px;opacity:.55">Touch: stick to steer, Fire to shoot, Missile for one-hit homing blasts. Keyboard: WASD or arrows, Space fires, F missile, Shift boosts. Headphones recommended.</p></div>
 <div class="ov" id="over"><h1>Mission over</h1><p id="fin"></p><button class="big" id="again">Fly again</button><a href="index.html" style="color:#ffb04a">Back to the island</a></div>
 <div id="hud"><div id="top"><b>EVILJAY SPACE</b><span id="sc">Score 0</span><span id="wv">Wave 1</span></div><div id="shield"><i id="sb"></i></div><canvas id="rd" width="120" height="120"></canvas><div id="cross"></div><div id="msg"></div>
-<div id="bar"><span id="np">Press Launch</span><button id="nx">Next</button><button id="mt">Sound on</button><a href="index.html">Island</a></div>
+<div id="bar"><span id="np">Press Launch</span><button id="nx">Next song</button><button id="mt">Sound on</button><a href="index.html">Island</a></div>
 <div id="joy"><div id="stick"></div></div><div id="btns"><button id="fire">Fire</button><button id="bm">Missile</button><button id="bo">Boost</button></div></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="songs.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const $=id=>document.getElementById(id),rnd=Math.random;
-const SONGS=[['Bubblegum · EvilJay TheDevil','bubblegum.mp3']];
+const EJS=(window.EJ_SONGS&&window.EJ_SONGS.length)?window.EJ_SONGS:[{t:'Bubblegum',u:'bubblegum.mp3'}];const SONGS=EJS.map(o=>[o.t+' · EvilJay TheDevil',o.u]);
 const R=new THREE.WebGLRenderer({canvas:$('c'),antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,2));R.setSize(innerWidth,innerHeight);
 const S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(70,innerWidth/innerHeight,.5,9000);
 const PM=(c,m,r)=>new THREE.MeshStandardMaterial({color:c,metalness:m,roughness:r});
@@ -165,7 +165,7 @@ const off=new THREE.Vector3(0,3.2,-13).applyQuaternion(jet.quaternion).add(jet.p
 cam.fov=70+(spd-130)*.12;cam.updateProjectionMatrix();sky.position.copy(jet.position);
 const jp=jet.position;for(let i=0;i<ND;i++)for(let k=0;k<3;k++){const c=['x','y','z'][k];let d=dp[i*3+k]-jp[c];d=((d+300)%600+600)%600-300;dp[i*3+k]=jp[c]+d;}dg.attributes.position.needsUpdate=true;
 hud();R.render(S,cam);}
-$('go').onclick=()=>{ac();play(0);$('start').style.display='none';reset();running=true;};
+$('go').onclick=()=>{ac();play(Math.floor(Math.random()*SONGS.length));$('start').style.display='none';reset();running=true;};
 $('again').onclick=()=>{$('over').style.display='none';reset();running=true;};
 jet.position.set(0,250,1150);jet.lookAt(0,0,0);requestAnimationFrame(loop);
 addEventListener('resize',()=>{R.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();});

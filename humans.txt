@@ -1,7 +1,14 @@
 /* TEAM */
 Artist: EvilJay TheDevil (Jay Frazier)
+From: Minneapolis, Minnesota. Based in Las Vegas, Nevada
 Booking: (612) 457-5417, EVILJAYTHEDEVIL@yahoo.com
+Spotify: https://open.spotify.com/artist/1MR461cKZAEASGAFPbsrpy
+
+Website design and development: Zane Deep
+Site: https://zanedeep.vercel.app/
+YouTube: https://www.youtube.com/@officialzanedeep
 
 /* SITE */
-Last update: 2026/10/20
+Last update: 2026-10-21
+Language: English
 Tech: HTML, Three.js, Web Audio, Vercel

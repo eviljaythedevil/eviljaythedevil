@@ -1,4 +1,40 @@
+# EVILJAY: TheDevil World of EvilJay TheDevil (Jay Frazier)
+# Site designed and built by Zane Deep: https://zanedeep.vercel.app/
 User-agent: *
 Allow: /
+Disallow: /deploy.sh
 
-Sitemap: https://jaytehedevil.vercel.app/sitemap.xml
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://eviljay.vercel.app/sitemap.xml

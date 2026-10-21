@@ -7,8 +7,11 @@
 - [Interview on Digital Social Hour (YouTube)](https://www.youtube.com/watch?v=wlwCZElA3jM)
 
 ## Pages
-- [Evil Island (interactive 3D site)](https://jaytehedevil.vercel.app/): drive the Hell Rod or Hell Bike to glowing zones while EvilJay TheDevil's songs play, a different song in every glowing circle
-- [Cinema](https://jaytehedevil.vercel.app/cinema): Evil Jay on Digital Social Hour, the music visual and Spotify
-- [EVILJAY Space](https://jaytehedevil.vercel.app/space): fly a fighter jet around the Earth and shoot the aliens
-- [EVILJAY Snowboarding](https://jaytehedevil.vercel.app/snowboard): hell freezes over, a 3D trick snowboarding game on 3 mountains
-- [EVILJAY Boxing](https://jaytehedevil.vercel.app/boxing): Punch-Out style 3D boxing in a Las Vegas arena against 5 contenders
+- [Evil Island (interactive 3D site)](https://eviljay.vercel.app/): drive the Hell Rod or Hell Bike to glowing zones while EvilJay TheDevil's songs play, a different song in every glowing circle
+- [Cinema](https://eviljay.vercel.app/cinema): Evil Jay on Digital Social Hour, the music visual and Spotify
+- [EVILJAY Space](https://eviljay.vercel.app/space): fly a fighter jet around the Earth and shoot the aliens
+- [EVILJAY Snowboarding](https://eviljay.vercel.app/snowboard): hell freezes over, a 3D trick snowboarding game on 3 mountains
+- [EVILJAY Boxing](https://eviljay.vercel.app/boxing): Punch-Out style 3D boxing in a Las Vegas arena against 5 contenders
+
+## Credits
+- Website designed and built by [Zane Deep](https://zanedeep.vercel.app/), music producer and web developer.
